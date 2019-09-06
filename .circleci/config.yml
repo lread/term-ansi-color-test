@@ -1,0 +1,22 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/clojure:openjdk-8-tools-deps-1.10.0.442
+    steps:
+      - checkout
+      - run:
+          name: Introduction
+          command: echo 'Hey, just testing how circleci handles ansi colors in its output'
+
+      - run:
+          name: iTerm2 24-bit-color.sh test
+          command: ./24-bit-color.sh
+
+      - run:
+          name: iTerm2 colors.sh test - base ansi 16 color pallette
+          command: ./colors.sh
+
+      - run:
+          name: konsole color-spaces.pl test
+          command: ./color-spaces.pl
