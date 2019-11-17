@@ -1,0 +1,22 @@
+name: Term ANSI Color Test
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Introduction
+        run: echo 'Hey, just testing how circleci handles ansi colors in its output'
+
+      - name: iTerm2 24-bit-color.sh test
+        run: ./24-bit-color.sh
+
+      - name: iTerm2 colors.sh test - base ansi 16 color pallette
+        run: ./colors.sh
+
+      - name: konsole color-spaces.pl test
+        run: ./color-spaces.pl
