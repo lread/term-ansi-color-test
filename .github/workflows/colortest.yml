@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Introduction
-        run: echo 'Hey, just testing how circleci handles ansi colors in its output'
+        run: echo 'Hey, just testing how github actions handles ansi colors in its output'
 
       - name: iTerm2 24-bit-color.sh test
         run: ./24-bit-color.sh
